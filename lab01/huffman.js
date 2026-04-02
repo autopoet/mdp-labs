@@ -46,8 +46,3 @@ console.log("1. 编码字典:", codeMap);
 console.log(`2. 编码结果: ${encoded}`);
 console.log(`3. 解码结果: ${decoded}`);
 console.log(` 验证: ${decoded === targetStr ? "成功" : "失败"}`);
-
-
-// 这里我使用了 forEach 遍历字符串数组，通过一个回调函数来维护外部定义的 Map 对象。
-// 在回调函数内部，我利用三元运算符实现了逻辑判断：如果字符已存在，则通过 get 获取引用并累加频率；如果不存在，则通过 set 初始化该字符的属性（包括频率、首次出现顺序以及后续建树所需的指针）。
-
