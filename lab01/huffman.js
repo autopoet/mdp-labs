@@ -9,7 +9,7 @@ const map = new Map();
   map.has(c) ? map.get(c).freq++ : map.set(c, { char: c, freq: 1, order: i, left: null, right: null });
 });
 
-// 严格按题目排序：频率升序 -> 出现顺序
+// 排序：频率升序 -> 出现顺序
 const queue = [...map.values()].sort((a, b) => a.freq - b.freq || a.order - b.order);
 
 // 2. 建树 (每次取前两个，合成后直接塞末尾)
@@ -29,7 +29,7 @@ const getCodes = (node, code = "") => {
 };
 getCodes(root);
 
-// 4. 编解码与验证 (利用 map 和 join 快速拼接)
+// 4. 编解码与验证
 const encoded = [...targetStr].map(c => codeMap[c]).join('');
 
 let decoded = "", curr = root;
